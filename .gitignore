@@ -1,0 +1,63 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data, results, and plot folders (if generated or too large)
+data/
+results/
+plots/
+
+# Logs
+*.log
+
+# PySpark metadata (if any temp folders)
+.metastore_db/
+.derby.log
+
+# macOS
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# System files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Python specific
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Test coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# MyPy / Pyright
+.mypy_cache/
+.pyrightcache/
+
+# Jupyter lab settings
+.lab/
+
+# Ignore backup files
+*~
+
+project_structure.txt
