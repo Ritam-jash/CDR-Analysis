@@ -1,3 +1,5 @@
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
@@ -5,6 +7,33 @@ import glob
 import sys
 
 def load_csv_results(file_path):
+    """
+    Load a CSV file (or Spark CSV output directory) into a Pandas DataFrame.
+
+    Args:
+        file_path (str): Path to the CSV file or Spark output directory.
+    Returns:
+        DataFrame: Loaded DataFrame, or None if an error occurs.
+    """
+    import glob
+    import os
+    try:
+        # If file_path is a directory (Spark output), look for part-*.csv
+        if os.path.isdir(file_path):
+            part_files = glob.glob(os.path.join(file_path, "part-*.csv"))
+            if not part_files:
+                print(f"No part files found in {file_path}")
+                return None
+            file_path = part_files[0]
+        df = pd.read_csv(file_path)
+        return df
+    except Exception as e:
+        print(f"Error loading CSV file: {file_path}")
+        print(e)
+        return None
+
+
+def load_csv_results_old(file_path):
     """
     Load CSV results into a pandas DataFrame
     
@@ -257,6 +286,3 @@ if __name__ == "__main__":
     plot_top_users()
     
     print("All plots have been saved to the 'plots' directory.")
-               
-
-               

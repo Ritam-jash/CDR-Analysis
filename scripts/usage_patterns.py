@@ -94,8 +94,8 @@ def analyze_call_durations(df: DataFrame):
     
     # Create duration buckets
     voice_calls = voice_calls.withColumn(
-        "duration_bucket",
-        when(col("duration") < 60, "< 1 min")
+        "duration_bucket"
+        .when(col("duration") < 60, "< 1 min")
         .when(col("duration") < 300, "1-5 mins")
         .when(col("duration") < 600, "5-10 mins")
         .when(col("duration") < 1800, "10-30 mins")
