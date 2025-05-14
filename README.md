@@ -124,9 +124,6 @@ After running the pipeline, check the `plots` directory for visualizations:
 - Integration with a dashboard for real-time monitoring
 - Geospatial analysis of call patterns
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
